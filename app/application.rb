@@ -25,6 +25,17 @@ class Application
     resp.finish
   end
 
+  def handle_cart(cart)
+    if @@cart.length > 0
+      @@cart.each do |cart|
+        rep.write "#{cart}\n"
+      end
+    else
+      rep.write "Your cart is empty"
+    end
+  end
+      
+
   def handle_search(search_term)
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
