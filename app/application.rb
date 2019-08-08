@@ -28,7 +28,7 @@ class Application
 
       if @@items.include?(item_term)
         resp.write "added #{item_term}"
-      else 
+      else
         resp.write "We don't have that item"
       end
 
