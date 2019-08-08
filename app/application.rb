@@ -22,21 +22,17 @@ class Application
       else
         resp.write "Your cart is empty"
       end
+    elsif req.path.match(/add/)
+      
+      item_term = req.params["item"]
+
+      if @@items.include?(item_term)
+      
     else
       resp.write "Path Not Found"
     end
 
     resp.finish
-  end
-
-  def handle_cart()
-    if @@cart.length > 0
-      @@cart.each do |cart|
-        resp.write "#{cart}\n"
-      end
-    else
-      return "Your cart is empty"
-    end
   end
 
   def handle_search(search_term)
