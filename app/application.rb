@@ -26,7 +26,7 @@ class Application
   def handle_cart()
     if @@cart.length > 0
       @@cart.each do |cart|
-        rep.write "#{cart}\n"
+        resp.write "#{cart}\n"
       end
     else
       rep.write "Your cart is empty"
